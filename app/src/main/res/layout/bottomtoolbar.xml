@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_alignParentBottom="true"
+    android:elevation="15dp"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearBottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="25dp"
+        android:background="@color/white">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/linearBottomLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/linearBottomLayout"
+            app:layout_constraintEnd_toEndOf="@+id/linearBottomLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearBottomLayout"
+            android:drawableStart="@drawable/ic_baseline_play_arrow_24"
+            android:stateListAnimator="@null"
+            android:background="@drawable/button_background"
+            android:text="Play"
+            android:textSize="14sp"
+            android:id="@+id/speakButton"
+            android:shadowColor="@color/white"
+            android:paddingStart="10dp"
+            android:paddingEnd="15dp"
+            android:textColor="#4CAF50"
+            android:onClick="speakClick"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/linearBottomLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/linearBottomLayout"
+            app:layout_constraintEnd_toEndOf="@+id/linearBottomLayout"
+            android:layout_marginEnd="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_share_option"
+            android:onClick="shareSs"
+            android:id="@+id/shareToolbar"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/linearBottomLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/linearBottomLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearBottomLayout"
+            android:layout_marginEnd="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_gear"
+            android:id="@+id/goTop"
+            android:onClick="goTopPage"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.Toolbar>

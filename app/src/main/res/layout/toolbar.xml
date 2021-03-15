@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_alignParentTop="true"
+    app:titleTextColor="@color/white"
+    android:elevation="15dp"
+    android:background="@color/white"
+    android:id="@+id/toolbar">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        android:background="@color/white"
+        app:tabSelectedTextColor="#4CAF50"
+        app:tabTextAppearance="@style/myCustomTextTab"
+        app:tabIndicatorColor="#4CAF50"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        app:tabTextColor="@color/shade">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yourFeed"
+            android:textColor="@color/shade"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Trending"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/politics"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cricket"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/entertainment"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/science"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/business"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/world"
+            android:textColor="@color/shade"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/youtube"
+            android:textColor="@color/shade"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StocksActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbarStocks">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_black"
+            android:id="@+id/backStocks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/backStocks"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/allStocks"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/backStocks"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/titleAllStocks"
+            android:textSize="20sp"
+            android:includeFontPadding="false"/>
+        <View
+            android:layout_width="35dp"
+            android:layout_height="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/titleAllStocks"
+            app:layout_constraintStart_toEndOf="@+id/backStocks"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#0B229F"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filterConst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarStocks">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintStart_toStartOf="@+id/filterConst"
+            app:layout_constraintTop_toTopOf="@+id/filterConst"
+            android:id="@+id/nameConstraint">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintStart_toStartOf="@+id/nameConstraint"
+                app:layout_constraintTop_toTopOf="@+id/nameConstraint"
+                android:id="@+id/myOne">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintEnd_toEndOf="@+id/nameConstraint"
+                app:layout_constraintTop_toTopOf="@+id/nameConstraint"
+                android:id="@+id/myTwo">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/stockbuttonbg"
+                    app:layout_constraintEnd_toEndOf="@+id/myTwo"
+                    app:layout_constraintStart_toStartOf="@+id/myTwo"
+                    app:layout_constraintTop_toTopOf="@+id/myTwo"
+                    android:text="Market Cap(cr)"
+                    android:textColor="@color/greenish"
+                    android:padding="4dp"
+                    android:id="@+id/capitalText"
+                    android:onClick="marketCapClick"
+                    android:drawableEnd="@drawable/ic_sort_arrows"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.3"
+            app:layout_constraintEnd_toEndOf="@+id/filterConst"
+            app:layout_constraintTop_toTopOf="@+id/filterConst"
+            android:id="@+id/myThree">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/myThree"
+                android:background="@drawable/stockbuttonbg"
+                app:layout_constraintEnd_toEndOf="@+id/myThree"
+                app:layout_constraintStart_toStartOf="@+id/myThree"
+                android:text="Market Price(cr)"
+                android:textColor="@color/greenish"
+                android:id="@+id/PriceText"
+                android:onClick="marketPriceClick"
+                android:drawableEnd="@drawable/ic_sort_arrows"
+                android:padding="4dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerStocks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterConst" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

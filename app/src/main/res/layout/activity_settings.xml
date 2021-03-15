@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".settingsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/settingsToolbar"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:elevation="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toTopOf="@+id/mainParent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ImageView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/backSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_baseline_arrow_back_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/settings"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                    <View
+                        android:id="@+id/secondLine"
+                        android:layout_width="30dp"
+                        android:layout_height="2dp"
+                        android:background="#1834CD"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/mainParent"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/settingsToolbar"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/chooseLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/languageHeading"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/english"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chooseLanguage"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/english"
+                    android:textColor="@color/black"
+                    android:onClick="englishChange"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_checkme" />
+
+                <TextView
+                    android:id="@+id/hindi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/english"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/hindi"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_checkme"
+                    android:onClick="hindiChange"/>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/firstView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/relative1" />
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/firstView">
+
+                <TextView
+                    android:id="@+id/mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/mode"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/defaultMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mode"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/defaultMode"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_checkme"
+                    android:drawableStart = "@drawable/ic_process"
+                    android:drawablePadding="10dp"
+                    android:onClick="defaultMode"/>
+
+                <TextView
+                    android:id="@+id/lightMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/defaultMode"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/lightMode"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_checkme"
+                    android:drawableStart="@drawable/ic_lightmode"
+                    android:drawablePadding="10dp"
+                    android:onClick="lightMode"/>
+
+                <TextView
+                    android:id="@+id/nightMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lightMode"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/darkMode"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_checkme"
+                    android:drawableStart="@drawable/ic_moon"
+                    android:drawablePadding="10dp"
+                    android:onClick="nightMode"/>
+
+
+
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/secondView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/relative2" />
+
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/secondView">
+
+                <TextView
+                    android:id="@+id/general"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/notify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/general"
+                    android:layout_marginTop="15dp"
+                    android:drawablePadding="10dp"
+                    android:text="@string/notify"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_baseline_power_back"
+                    android:drawableStart="@drawable/ic_bell"
+                    android:ellipsize="end"/>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/notify"
+                    android:layout_marginTop="10dp"
+                    android:background="#7A7E7E" />
+
+                <TextView
+                    android:id="@+id/shareThis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line1"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="10dp"
+                    android:text="@string/shareThis"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_baseline_power_back"
+                    android:drawableStart="@drawable/ic_share_settings" />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/shareThis"
+                    android:layout_marginTop="10dp"
+                    android:background="#7A7E7E" />
+
+                <TextView
+                    android:id="@+id/rateThis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line2"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="10dp"
+                    android:text="@string/rateThis"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_baseline_power_back"
+                    android:drawableStart="@drawable/ic_best_employee" />
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/rateThis"
+                    android:layout_marginTop="10dp"
+                    android:background="#7A7E7E" />
+
+                <TextView
+                    android:id="@+id/feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/line3"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="10dp"
+                    android:text="@string/feedback"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:drawableEnd="@drawable/ic_baseline_power_back"
+                    android:drawableStart="@drawable/ic_feedback" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/relative3" />
+
+            <TextView
+                android:id="@+id/submitNews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:maxLines="1"
+                android:text="@string/submitNews"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/line4" />
+
+            <TextView
+                android:id="@+id/contactHere"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:maxLines="1"
+                android:text="@string/contactUs"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/submitNews" />
+
+            <TextView
+                android:id="@+id/aboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:maxLines="1"
+                android:text="@string/aboutUs"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/mainParent"
+                app:layout_constraintStart_toStartOf="@+id/mainParent"
+                app:layout_constraintTop_toBottomOf="@+id/contactHere"
+                android:ellipsize="end"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

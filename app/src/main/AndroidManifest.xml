@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.newsapp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_layers"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NewsApp">
+        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".ContactHereActivity" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:configChanges="fontScale|locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NewsApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SearchResults"
+            android:configChanges="fontScale|locale|layoutDirection" />
+        <activity
+            android:name=".SearchNewsActivity"
+            android:configChanges="fontScale|locale|layoutDirection" />
+        <activity android:name=".StocksActivity" />
+        <activity
+            android:name=".settingsActivity"
+            android:configChanges="fontScale|locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NewsApp" />
+        <activity android:name=".WebActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="fontScale|locale|layoutDirection"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NewsApp" />
+
+        <service android:name=".Service.FirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Service.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondConstraint"
+        android:layout_width="match_parent"
+        android:background="@color/articleBackground"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/thirdConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/secondConstraint"
+            app:layout_constraintHeight_percent="0.36"
+            app:layout_constraintStart_toStartOf="@+id/secondConstraint"
+            app:layout_constraintTop_toTopOf="@+id/secondConstraint">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:background="@drawable/ic_bestimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayoutForTouch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/secondConstraint"
+            app:layout_constraintTop_toBottomOf="@+id/thirdConstraint">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tvConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                app:layout_constraintHeight_percent="0.11"
+                app:layout_constraintStart_toStartOf="@+id/linearLayoutForTouch"
+                app:layout_constraintTop_toTopOf="@+id/linearLayoutForTouch">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:includeFontPadding="false"
+                    android:text="Title"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tvsecond"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayoutForTouch"
+                app:layout_constraintHeight_percent="0.45"
+                app:layout_constraintStart_toStartOf="@id/linearLayoutForTouch"
+                app:layout_constraintTop_toBottomOf="@+id/tvConstraint">
+
+                <TextView
+                    android:id="@+id/tvContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:includeFontPadding="false"
+                    android:text="Content"
+                    android:textColor="@color/black"
+                    app:autoSizeTextType="uniform" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/readFull"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.04"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:autoSizeTextType="uniform"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:text="@string/readFull"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/greenish"
+                app:layout_constraintStart_toStartOf="@+id/linearLayoutForTouch"
+                app:layout_constraintTop_toBottomOf="@id/tvsecond" />
+
+            <TextView
+                android:id="@+id/flipPage"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintHeight_percent="0.04"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/flipPage"
+                android:textColor="@color/greenish"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintStart_toStartOf="@+id/linearLayoutForTouch"
+                app:layout_constraintTop_toBottomOf="@+id/readFull" />
+
+            <TextView
+                android:id="@+id/timeArticle"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.04"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:drawableLeft="@drawable/ic_clock"
+                android:drawablePadding="5dp"
+                android:text="Time"
+                android:textColor="@color/shade"
+                android:textSize="@dimen/_13sdp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintStart_toStartOf="@+id/linearLayoutForTouch"
+                app:layout_constraintTop_toBottomOf="@+id/flipPage"
+                app:layout_goneMarginBottom="50dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="#4CAF50"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
